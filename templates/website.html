@@ -1,0 +1,105 @@
+<head>
+	<title>T-Buy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	* {
+  		box-sizing: border-box;
+	 }
+	 body {
+  		font-family: Arial, Helvetica, sans-serif;
+  		margin: 0;
+	}
+	.header {
+  		padding: 80px;
+  		text-align: center;
+  		color: Black;
+   	}
+	
+   	.row {  
+  		display: -ms-flexbox; 
+  		display: flex;
+  		-ms-flex-wrap: wrap; 
+ 		 flex-wrap: wrap;
+	}
+	.side {
+  		-ms-flex: 50%; /* IE10 */
+  		flex: 100%;
+  		background-color: #d2e4e4;
+  		padding: 20px;
+	}
+	@media screen and (max-width: 700px) {
+  	.row {   
+    		flex-direction: column;
+  	}
+	}
+	.dropbtn {
+  		background-color: #72aa8f;
+  		color: white;
+  		padding: 16px;
+  		font-size: 16px;
+  		border: none;
+	}
+	.dropdown {
+  		position: relative;
+  		display: inline-block;
+	}
+	.dropdown-content {
+  		display: none;
+  		position: absolute;
+  		background-color: #f1f1f1;
+  		min-width: 160px;
+  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  		z-index: 1;
+ 	}
+	.dropdown-content a {
+  		color: black;
+  		padding: 12px 16px;
+  		text-decoration: none;
+  		display: block;
+	}
+	.dropdown-content a:hover {background-color: #a2c7b5;}
+	.dropdown:hover .dropdown-content {display: block;}
+	.dropdown:hover .dropbtn {background-color: #a2c7b5;}
+	</style>
+</head>
+<body>
+    	<div class="header">
+          		<h1>Fashion Trends</h1>
+                </div>
+               <div class="row">
+                  <div class="side">
+                    <h2>CURRENT TRENDS</h2>
+                    <br>
+                   <div class="dropdown">
+              	  <button class="dropbtn">Choose a category</button>
+                     <div class="dropdown-content">
+                		<a href="currenttrends?men-tshirts">Men T-shirts</a>
+						<a href="currenttrends?men-shirts">Men Shirts</a>
+						<a href="currenttrends?men-jeans">Men Jeans</a>
+						<a href="currenttrends?men-trousers">Men Trousers</a>
+						<a href="currenttrends?men-floaters">Men Floaters</a>
+						<a href="currenttrends?men-shoes">Men Shoes</a>
+						<a href="currenttrends?women-dresses">Women Dresses</a>
+						<a href="currenttrends?women-shirts">Women Shirts</a>
+						<a href="currenttrends?women-sarees">Women Sarees</a>
+						<a href="currenttrends?women-kurtis">Women Kurtis</a>
+						<a href="currenttrends?women-skirts">Women Skirts</a>
+						<a href="currenttrends?women-sandals">Women Sandals</a>
+						<a href="currenttrends?women-shoes">Women Shoes</a>
+						<a href="currenttrends?kids-boys-ethnic">Kids Boys Ethnic Wear</a>
+						<a href="currenttrends?kids-boys-shirts">Kids Boys Shirts</a>
+						<a href="currenttrends?kids-boys-tshirts">Kids Boys T-Shirts</a>
+						<a href="currenttrends?baby-boys-clothing-sets">Baby Boys Clothing Sets</a>
+						<a href="currenttrends?kids-girls-ethnic">Kids Girls Ethnic Wear</a>
+						<a href="currenttrends?kids-girls-dresses">Kids Girls Dresses</a>
+						<a href="currenttrends?baby-girls-clothing-sets">Baby Girls Clothing Sets</a>
+						
+                    </div>
+                   <br>
+                </div>
+              <br>
+            </div>
+          </div>
+        </div>
+</body>
+</html>
