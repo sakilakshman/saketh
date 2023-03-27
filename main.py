@@ -3,7 +3,7 @@ import os
 from flask import  render_template, request
 import pandas as pd
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
+app.config["DEBUG"] = True # type: ignore
 
 class Product:
     name=""
@@ -42,4 +42,4 @@ def api_currenttrends():
 @app.route('/home', methods=['GET'])
 def api_homepage():
     return render_template("website.html")
-app.run(host="0.0.0.0", port=8081)
+app.run(host="0.0.0.0", port=int(os.getenv("PORT",8080)))
