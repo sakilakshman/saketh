@@ -26,4 +26,4 @@ jobs:
 
     - name: Execute Notebook
       run: |
-        papermill notebook.ipynb output.ipynb
+        papermill review.ipynb output.ipynb
