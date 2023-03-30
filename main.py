@@ -44,7 +44,7 @@ def api_currenttrends():
 def api_homepage():
     return render_template("website.html")
 
-subprocess.run('''netstat -ona | findStr:8080 ''')
+subprocess.run('''netstat -ona | findStr "8080" ''')
 
 
 app.run(host="0.0.0.0", port=int(os.getenv("PORT",8080)))
