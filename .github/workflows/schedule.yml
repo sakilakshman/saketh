@@ -1,6 +1,7 @@
 name: Schedule Notebook Execution
 
 on:
+  push:
   schedule:
     - cron: '* * * * *'
 
