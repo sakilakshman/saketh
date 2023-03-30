@@ -11,11 +11,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16.x'
         
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -29,6 +24,8 @@ jobs:
         pip install ipykernel
         python -m ipykernel install --user --name python3 --display-name "Python 3"
 
-    - name: Execute Notebook
-      run: |
-        papermill review.ipynb output.ipynb
+    - name: Execute notebook
+      uses: papermill-io/action-papermill@v2
+      with:
+        notebook_path: review.ipynb
+        output_path: output.ipynb
