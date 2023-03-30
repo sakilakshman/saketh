@@ -1,0 +1,17 @@
+name: Schedule Notebook Execution
+on:
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  run_notebook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install nbconvert
+        run: pip install nbconvert
+      - name: Execute Notebook
+        run: jupyter nbconvert --to notebook --execute review.ipynb
