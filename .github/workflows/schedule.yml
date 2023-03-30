@@ -27,3 +27,11 @@ jobs:
     - name: Execute Notebook
       run: |
         papermill review.ipynb output.ipynb
+        
+    - name: Commit changes
+      run: |
+        git config --global user.email "bsumanth02@gmail.com"
+        git config --global user.name "Sumanth Bolisetty"
+        git add .
+        git commit -m "Update files"
+        git push
