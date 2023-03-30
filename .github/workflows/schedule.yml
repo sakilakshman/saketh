@@ -31,4 +31,4 @@ jobs:
 
     - name: Execute Notebook
       run: |
-        papermill review.ipynb output.ipynb -p foo bar
+        papermill review.ipynb output.ipynb
