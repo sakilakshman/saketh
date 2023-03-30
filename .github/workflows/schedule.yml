@@ -29,4 +29,4 @@ jobs:
 
     - name: Execute Notebook
       run: |
-        papermill review.ipynb output.ipynb -k 'python' -p foo bar
+        papermill review.ipynb output.ipynb --kernel python3 -p foo bar
