@@ -9,23 +9,31 @@
   		font-family: Arial, Helvetica, sans-serif;
   		margin: 0;
 	}
+    a {
+        color: black;
+        text-decoration: none;
+    }
 	.header {
-  		padding: 30px;
-  		text-align: center;
+  		height: 15%;
+        padding: 20px;
+        text-align: center;
   		color: Black;
+        border-bottom: solid black 1px;
    	}
 	
    	.row {  
   		display: -ms-flexbox; 
   		display: flex;
   		-ms-flex-wrap: wrap; 
- 		 flex-wrap: wrap;
+ 		flex-wrap: wrap;
 	}
 	.side {
-  		-ms-flex: 50%; /* IE10 */
-  		flex: 100%;
   		background-color: #d2e4e4;
-  		padding: 20px;
+        border: solid black 1px;
+        float: left;
+        width: 10%;
+        height: 85%;
+        text-align: center;
 	}
 	@media screen and (max-width: 700px) {
   	.row {   
@@ -33,74 +41,94 @@
   	}
 	}
 	.dropbtn {
-  		color: white;
-  		padding: 30px;
-  		font-size: 18px;
-  		border: none;
-		block-size: 30px;
-		background-color: #a2c7b5;
-		text-align: center;
+  		border:black 2px;
+		block-size: auto;
 	}
-	.dropdown {
-  		position: relative;
-  		display: inline-block;
-	}
-	.dropdown-content {
-  		display: none;
-  		position: absolute;
-  		background-color: #f1f1f1;
-  		min-width: 160px;
-  		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  		z-index: 1;
- 	}
-	.dropdown-content a {
-  		color: black;
-  		padding: 12px 16px;
-  		text-decoration: none;
-  		display: block;
-	}
-	.dropdown-content a:hover {background-color: #a2c7b5;}
-	.dropdown:hover .dropdown-content {display: block;}
-	.dropdown:hover .dropbtn {background-color: #a2c7b5;}
+    .btn {
+        outline: none;
+        border: none;
+		font-size: medium;
+        padding: 20px;
+        background-color: transparent;
+    }
+
+    .btn:hover {
+        background-color: #fff;
+    }
+
+    .card {
+        display: none;
+        width:max-content;
+        transform: translate(70%, 0%);
+        background-color: #fff;
+        padding: 10px;
+        border: solid 1px #000;
+    }
+    
+    .droplist_wrapper {
+        width: auto;
+    }
+
+    .droplist_wrapper:hover .card {
+        display: block;
+    }
+
+    .card {
+        background-color: #d2e4e4;
+        width: auto;
+    }
 	</style>
 </head>
 <body>
 	<div class="header">
 		<h1>T-Buy</h1>
 	</div>
-		<div class="row">
-		<div class="side">
-		  	<h2>CURRENT TRENDS</h2>
-		  	<br>
-		 	<div class="dropdown">
-		  	<button class="dropbtn">Choose a category</button>
-		   	<div class="dropdown-content">
-			  	<a href="currenttrends?men-tshirts">Men T-shirts</a>
-			  	<a href="currenttrends?men-shirts">Men Shirts</a>
-			  	<a href="currenttrends?men-jeans">Men Jeans</a>
-			  	<a href="currenttrends?men-trousers">Men Trousers</a>
-			  	<a href="currenttrends?men-floaters">Men Floaters</a>
-			  	<a href="currenttrends?men-shoes">Men Shoes</a>
-			  	<a href="currenttrends?women-dresses">Women Dresses</a>
-			  	<a href="currenttrends?women-shirts">Women Shirts</a>
-			  	<a href="currenttrends?women-sarees">Women Sarees</a>
-			  	<a href="currenttrends?women-kurtis">Women Kurtis</a>
-			  	<a href="currenttrends?women-skirts">Women Skirts</a>
-			  	<a href="currenttrends?women-sandals">Women Sandals</a>
-			  	<a href="currenttrends?women-shoes">Women Shoes</a>
-			  	<a href="currenttrends?kids-boys-ethnic">Kids Boys Ethnic Wear</a>
-			  	<a href="currenttrends?kids-boys-shirts">Kids Boys Shirts</a>
-			  	<a href="currenttrends?kids-boys-tshirts">Kids Boys T-Shirts</a>
-			  	<a href="currenttrends?baby-boys-clothing-sets">Baby Boys Clothing Sets</a>
-			  	<a href="currenttrends?kids-girls-ethnic">Kids Girls Ethnic Wear</a>
-			  	<a href="currenttrends?kids-girls-dresses">Kids Girls Dresses</a>
-				<a href="currenttrends?baby-girls-clothing-sets">Baby Girls Clothing Sets</a>	
-		  	</div>
-		 	<br>
-	  	</div>
-		<br>
-  	</div>
-</div>
-</div>
+    
+    <div class="dropbtn">
+        <div class="side">
+            <div class="droplist_wrapper">
+                <button class="btn">Men</button>
+                <div class="card">
+                    <div><a href="currenttrends?men-tshirts">T-shirts</a></div>
+			        <div><a href="currenttrends?men-shirts">Shirts</a></div>
+                    <div><a href="currenttrends?men-jeans">Jeans</a></div>
+                    <div><a href="currenttrends?men-trousers">Trousers</a></div>
+                    <div><a href="currenttrends?men-floaters">Floaters</a></div>
+                    <div><a href="currenttrends?men-shoes">Shoes</a></div>
+                </div>
+            </div>
+            <div class="droplist_wrapper">
+                <button class="btn">Women</button>
+                <div class="card">
+					<div><a href="currenttrends?women-dresses">Dresses</a></div>
+					<div><a href="currenttrends?women-shirts">Shirts</a></div>
+					<div><a href="currenttrends?women-sarees">Sarees</a></div>
+					<div><a href="currenttrends?women-kurtis">Kurtis</a></div>
+					<div><a href="currenttrends?women-skirts">Skirts</a></div>
+					<div><a href="currenttrends?women-sandals">Sandals</a></div>
+					<div><a href="currenttrends?women-shoes">Shoes</a></div>
+                </div>
+            </div>
+            <div class="droplist_wrapper">
+                <button class="btn">Kids</button>
+                <div class="card">
+					<div><a href="currenttrends?kids-boys-ethnic">Boys Ethnic Wear</a></div>
+					<div><a href="currenttrends?kids-boys-shirts">Boys Shirts</a></div>
+					<div><a href="currenttrends?kids-boys-tshirts">Boys T-Shirts</a></div>
+					<div><a href="currenttrends?baby-boys-clothing-sets">Baby Boys Clothing Sets</a></div>
+					<div><a href="currenttrends?kids-girls-ethnic">Girls Ethnic Wear</a></div>
+					<div><a href="currenttrends?kids-girls-dresses">Girls Dresses</a></div>
+					<div><a href="currenttrends?baby-girls-clothing-sets">Baby Girls Clothing Sets</a></div>
+                </div>
+            </div>
+        </div>
+        <div name="products-display" class="row">
+            <p>
+                Select a Category on Left panel to get Trending Products from E-Commerce Platforms
+            </p>
+        </div>
+    </div>
+
+
 </body>
 </html>
