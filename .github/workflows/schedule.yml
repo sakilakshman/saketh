@@ -1,17 +1,26 @@
 name: Schedule Notebook Execution
+
 on:
   schedule:
     - cron: '* * * * *'
+
 jobs:
-  run_notebook:
+  execute-notebook:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
-      - name: Install nbconvert
-        run: pip install nbconvert
-      - name: Execute Notebook
-        run: jupyter nbconvert --to notebook --execute review.ipynb
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install papermill
+
+    - name: Execute Notebook
+      run: |
+        papermill review.ipynb output.ipynb -k 'python' -p foo bar
