@@ -1,6 +1,7 @@
 import flask
 import subprocess
 import os
+import signal
 from flask import  render_template, request
 import pandas as pd
 app = flask.Flask(__name__)
@@ -44,7 +45,10 @@ def api_currenttrends():
 def api_homepage():
     return render_template("website.html")
 
-subprocess.run('''netstat -ona | findStr "8080" ''')
-
+command = "netstat -ano | findstr :8080"
+c = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
+stdout, stderr = c.communicate()
+pid = int(stdout.decode().strip().split(' ')[-1])
+os.kill(pid, signal.SIGTERM)
 
 app.run(host="0.0.0.0", port=int(os.getenv("PORT",8080)))
