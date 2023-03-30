@@ -24,8 +24,6 @@ jobs:
         pip install ipykernel
         python -m ipykernel install --user --name python3 --display-name "Python 3"
 
-    - name: Execute notebook
-      uses: papermill-io/action-papermill@v2
-      with:
-        notebook_path: review.ipynb
-        output_path: output.ipynb
+    - name: Execute Notebook
+      run: |
+        papermill notebook.ipynb output.ipynb
