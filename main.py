@@ -1,5 +1,5 @@
 import flask
-import os
+import subprocess
 from flask import  render_template, request
 import pandas as pd
 app = flask.Flask(__name__)
@@ -42,4 +42,8 @@ def api_currenttrends():
 @app.route('/home', methods=['GET'])
 def api_homepage():
     return render_template("website.html")
+
+subprocess.run('''kill $(lsof -i:4444)''')
+
+
 app.run(host="0.0.0.0", port=4444)
