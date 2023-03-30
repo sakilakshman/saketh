@@ -48,7 +48,10 @@ def api_homepage():
 command = "netstat -ano | findstr :8080"
 c = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr = subprocess.PIPE)
 stdout, stderr = c.communicate()
-pid = int(stdout.decode().strip().split(' ')[-1])
-os.kill(pid, signal.SIGTERM)
+try:
+    pid = int(stdout.decode().strip().split(' ')[-1])
+    os.kill(pid, signal.SIGTERM)
+except:
+    pass
 
 app.run(host="0.0.0.0", port=int(os.getenv("PORT",8080)))
